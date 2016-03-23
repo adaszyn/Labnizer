@@ -8,7 +8,7 @@ import { MainCtrl } from "./controllers/MainCtrl"
     $stateProvider
       .state('main', {
         url: "/main",
-        templateUrl: "/static/partials/main.html",
+        templateUrl: "static/partials/main.html",
         controller: MainCtrl
       })
   });
