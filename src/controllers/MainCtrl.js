@@ -2,7 +2,7 @@ import { APP_NAME } from "../config";
 export class MainCtrl {
   constructor($scope) {
     this.test = "Test";
-    $scope.test2 = "Test2";
+    $scope.test2 = 1;
   }
 }
 
