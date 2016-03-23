@@ -42652,7 +42652,7 @@
 	    $urlRouterProvider.otherwise("/main");
 	    $stateProvider.state('main', {
 	      url: "/main",
-	      templateUrl: "/static/partials/main.html",
+	      templateUrl: "static/partials/main.html",
 	      controller: _MainCtrl.MainCtrl
 	    });
 	  });
