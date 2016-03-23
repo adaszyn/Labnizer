@@ -1,5 +1,5 @@
 body {
-  background-image: url(/static/img/classroom.jpg);
+  background-image: url(static/img/classroom.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
