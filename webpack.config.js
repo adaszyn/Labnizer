@@ -1,11 +1,10 @@
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: "./src/entry.js",
+  entry: './src/entry.js',
   output: {
-    path: __dirname + '/dist',
-    filename: "bundle.js"
+    path: __dirname.concat('/dist'),
+    filename: 'bundle.js',
   },
   module: {
     loaders: [{
@@ -13,19 +12,18 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        presets: ['es2015']
-      }
+        presets: ['es2015'],
+      },
     }, {
       test: /\.css$/,
-      loader: "style!css"
-    }]
+      loader: 'style!css',
+    }],
   },
   plugins: [
-       new CopyWebpackPlugin([
-           { from: 'src' }
-       ],
-     {
-       ignore: ['*.js']
-     })
-   ]
+    new CopyWebpackPlugin([{
+      from: 'src',
+    }], {
+      ignore: ['*.js'],
+    }),
+  ],
 };

@@ -1,7 +1,9 @@
-import { APP_NAME } from "../config";
+import {
+  APP_NAME
+} from '../config';
 export class MainCtrl {
   constructor($scope) {
-    this.test = "Test";
+    this.test = 'Test';
     $scope.test2 = 1;
   }
 }

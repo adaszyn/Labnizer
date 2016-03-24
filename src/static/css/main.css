@@ -1,8 +1,17 @@
+body, html {
+  height: 100%;
+}
 body {
-  background-image: url(static/img/classroom.jpg);
+  background-image: url(../img/classroom.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "News Cycle","Arial Narrow Bold", sans-serif;
 }
 #main-content {
+  min-height: 70vh;
   background-color: white;
+}
+.grid {
+  width: 500px;
+  height: auto;;
 }

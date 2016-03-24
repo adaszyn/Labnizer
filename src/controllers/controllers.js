@@ -1,1 +1,2 @@
-import "./MainCtrl";
+import './MainCtrl';
+import './TableCtrl.js';

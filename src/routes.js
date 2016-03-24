@@ -1,15 +1,25 @@
-import { APP_NAME } from "./config";
-import { MainCtrl } from "./controllers/MainCtrl"
+import { APP_NAME } from './config';
+import { MainCtrl } from './controllers/MainCtrl';
+import { TableCtrl } from './controllers/TableCtrl';
 (() => {
-  console.log("app name route: ", APP_NAME);
   angular.module(APP_NAME)
-  .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/main");
+  .config(($stateProvider, $urlRouterProvider) => {
+    $urlRouterProvider.otherwise('/main');
     $stateProvider
       .state('main', {
-        url: "/main",
-        templateUrl: "static/partials/main.html",
-        controller: MainCtrl
+        url: '/main',
+        templateUrl: 'static/partials/main.html',
+        controller: MainCtrl,
       })
+      .state('table', {
+        url: '/table',
+        templateUrl: 'static/partials/table.html',
+        controller: TableCtrl,
+      })
+      .state('help', {
+        url: '/help',
+        templateUrl: 'static/partials/help.html',
+        controller: TableCtrl,
+      });
   });
 })();

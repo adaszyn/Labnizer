@@ -1,0 +1,9 @@
+{
+    "extends": "defaults/configurations/airbnb/es6",
+    "plugins": [],
+    "globals": {
+      "angular": true,
+      "require": true
+    },
+    "no-param-reassign": [2, {"props": false}]
+}
