@@ -38,3 +38,10 @@ body {
   width: 500px;
   height: auto;;
 }
+#logo-image, #logo-text {
+  float: left;
+}
+#logo-text {
+  margin-left: 10px;
+  line-height: 30px;
+}
