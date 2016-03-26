@@ -6,10 +6,11 @@ body {
   background-color: #fafafa;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: "News Cycle","Arial Narrow Bold", sans-serif;
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
 }
 #main-content {
   border: 1px solid;
+  position: relative;
   border-color: #EEEEEE;
   border-radius: 4px;
   min-height: 70vh;
@@ -32,11 +33,11 @@ body {
   z-index: -1;
   min-height: 30vh;
   min-width: 100vw;
-
 }
 .grid {
   width: 500px;
-  height: auto;;
+  height: auto;
+  ;
 }
 #logo-image, #logo-text {
   float: left;
@@ -44,4 +45,14 @@ body {
 #logo-text {
   margin-left: 10px;
   line-height: 30px;
+}
+#navbar-root {
+  background-color: rgba(255, 255, 255, 0.47);
+}
+#main-media-panel {
+  position: absolute;;
+  bottom: 14px;
+}
+#main-view-container {
+
 }
