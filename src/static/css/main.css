@@ -56,3 +56,18 @@ body {
 #main-view-container {
 
 }
+.glyphicon {
+  margin-right: 3px;
+}
+.add-group-input {
+  border: 0;
+}
+#add-group-entry > input:focus {
+  outline: none;
+}
+#add-group-entry > span {
+  float: right;
+}
+input.no-outline:focus {
+  outline: none !important;
+}

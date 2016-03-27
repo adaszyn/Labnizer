@@ -1,2 +1,3 @@
 import './MainCtrl';
-import './TableCtrl.js';
+import './TableCtrl';
+import './ManageCtrl';
