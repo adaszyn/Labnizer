@@ -8,7 +8,14 @@
       <span class="badge">{{group.participants.length}}</span>{{group.name}}
     </li>
     <li class="list-group-item" id="add-group-entry">
-      <input type="text" placeholder="Nazwa grupy" class="add-group-input"><span class="glyphicon glyphicon-plus"></span>
+      <input type="text"
+             placeholder="Nazwa grupy"
+             class="add-group-input"
+             ng-model="newGroup.name"
+             uib-tooltip="To pole nie może być puste"
+             tooltip-placement="bottom"
+             tooltip-trigger="focus">
+        <span class="glyphicon glyphicon-plus" style="color: green" ng-click="addNewGroup()"></span>
     </li>
   </ul>
 </div>
@@ -29,8 +36,8 @@
         <td><span class="glyphicon glyphicon-remove"></span></td>
       </tr>
       <tr>
-        <td><input type="text" class="no-outline" placeholder="Imię" ng-model="participantsFirstName"></td>
-        <td><input type="text" class="no-outline" placeholder="Nazwisko" ng-model="participantsLastName"></td>
+        <td><input type="text" class="no-outline" placeholder="Imię" ng-model="newParticipant.firstName"></td>
+        <td><input type="text" class="no-outline" placeholder="Nazwisko" ng-model="newParticipant.lastName"></td>
         <td ng-click="addParticipant(selectedGroup)"><span class="glyphicon glyphicon-plus"></span></td>
       </tr>
     </tbody>

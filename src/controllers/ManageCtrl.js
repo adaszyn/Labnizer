@@ -1,9 +1,17 @@
 import { APP_NAME } from '../config';
 import {Group, State, Participant} from '../models/models';
+
+let newParticipant = {
+  firstName: '',
+  lastName: ''
+};
+let newGroup = {
+  name: ''
+};
 export class ManageCtrl {
   constructor($scope, AppStateService) {
-    console.log(AppStateService.getState());
     this.$scope = $scope;
+    this.AppStateService = AppStateService;
     let group = new Group("Nazwa");
     let p1 = new Participant("Janusz1", "Jan1"),
         p2 = new Participant("Janusz2", "Jan2"),
@@ -16,16 +24,26 @@ export class ManageCtrl {
     $scope.showGroupDetails = this.showGroupDetails.bind(this);
     $scope.selectedGroup = AppStateService.getState().groups[0];
     $scope.addParticipant = this.addParticipant.bind(this);
-    console.log($scope.groups);
+    $scope.addNewGroup = this.addNewGroup.bind(this);
+    $scope.newParticipant = newParticipant;
+    $scope.newGroup = newGroup;
   }
   showGroupDetails(group) {
     this.$scope.selectedGroup = group;
-    console.log(group);
   }
   addParticipant(group) {
-    let participant = new Participant(this.$scope.participantsLastName, this.$scope.participantsLastName);
+    let participant = new Participant(newParticipant.firstName, newParticipant.lastName);
     group.participants.push(participant);
-    console.log(group);
+    newParticipant.firstName = '';
+    newParticipant.lastName = '';
+  }
+  addNewGroup() {
+    if (newGroup.name.length < 1 || typeof newGroup.name !== "string") {
+      return;
+    }
+    let group = new Group(newGroup.name);
+    this.AppStateService.getState().groups.push(group);
+    newGroup.name = '';
   }
 }
 angular.module(APP_NAME)
