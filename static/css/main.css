@@ -1,8 +1,73 @@
+body, html {
+  height: 100%;
+}
 body {
-  background-image: url(static/img/classroom.jpg);
+  /*background-image: url(../img/classroom.jpg);*/
+  background-color: #fafafa;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
 }
 #main-content {
-  background-color: white;
+  border: 1px solid;
+  position: relative;
+  border-color: #EEEEEE;
+  border-radius: 4px;
+  min-height: 70vh;
+  z-index: 50;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: 100% 80%;
+  background-color: rgba(255, 255, 255, 0.96);
+}
+.background-image {
+  background-image: url(../img/classroom.jpg);
+  position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  top: 0;
+  border: 1px solid;
+  border-color: #EEEEEE;
+  left: 0;
+  z-index: -1;
+  min-height: 30vh;
+  min-width: 100vw;
+}
+.grid {
+  width: 500px;
+  height: auto;
+  ;
+}
+#logo-image, #logo-text {
+  float: left;
+}
+#logo-text {
+  margin-left: 10px;
+  line-height: 30px;
+}
+#navbar-root {
+  background-color: rgba(255, 255, 255, 0.47);
+}
+#main-media-panel {
+  position: absolute;;
+  bottom: 14px;
+}
+#main-view-container {
+
+}
+.glyphicon {
+  margin-right: 3px;
+}
+.add-group-input {
+  border: 0;
+}
+#add-group-entry > input:focus {
+  outline: none;
+}
+#add-group-entry > span {
+  float: right;
+}
+input.no-outline:focus {
+  outline: none !important;
 }

@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h1>Zarządzaj grupami</h1>
+</div>
+
+<div class="col-md-6">
+  <ul class="list-group">
+    <li class="list-group-item" ng-if="groups.length > 0" ng-repeat="group in groups" ng-click="showGroupDetails(group)">
+      <span class="badge">{{group.participants.length}}</span>{{group.name}}
+    </li>
+    <li class="list-group-item" id="add-group-entry">
+      <input type="text"
+             placeholder="Nazwa grupy"
+             class="add-group-input"
+             ng-model="newGroup.name"
+             uib-tooltip="To pole nie może być puste"
+             tooltip-placement="bottom"
+             tooltip-trigger="focus">
+        <span class="glyphicon glyphicon-plus" style="color: green" ng-click="addNewGroup()"></span>
+    </li>
+  </ul>
+</div>
+<div class="col-md-6" style="border-left: 1px solid #EEEEEE" ng-if="selectedGroup">
+  <h3>{{selectedGroup.name}}</h3>
+  <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="participant in selectedGroup.participants">
+        <td>{{participant.firstName}}</td>
+        <td>{{participant.lastName}}</td>
+        <td><span class="glyphicon glyphicon-remove"></span></td>
+      </tr>
+      <tr>
+        <td><input type="text" class="no-outline" placeholder="Imię" ng-model="newParticipant.firstName"></td>
+        <td><input type="text" class="no-outline" placeholder="Nazwisko" ng-model="newParticipant.lastName"></td>
+        <td ng-click="addParticipant(selectedGroup)"><span class="glyphicon glyphicon-plus"></span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
